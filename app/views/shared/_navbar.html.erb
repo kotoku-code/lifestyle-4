@@ -1,10 +1,10 @@
 <nav class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
-        <%= link_to "Book Review", root_path, class: "navbar-brand" %>
+        <%= link_to "lifestyles", root_path, class: "navbar-brand" %>
       </div>
       <ul class="nav navbar-nav">
-       <%= link_to "new", "#" %>
+      <%= link_to "submit a link", new_link_path %>
       <%= link_to "comments", "#" %>
         <% if user_signed_in? %>
           <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
