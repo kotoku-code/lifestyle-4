@@ -2,6 +2,7 @@ class Link < ApplicationRecord
   
   belongs_to :user
   has_many :comments
+  has_many :votes
   validates :title,
             presence: true,
             uniqueness: { case_sensitive: false }
@@ -12,5 +13,9 @@ validates :url,
 
           def comment_count
             comments.length
+          end
+
+          def upvotes
+            votes.sum(:upvote)
           end
 end
