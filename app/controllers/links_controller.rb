@@ -5,7 +5,7 @@ class LinksController < ApplicationController
   end
   
 def index
-  @links = Link.all
+  @link = Link.hottest
 end
 
   def create
@@ -61,10 +61,28 @@ def upvote
 
   if current_user.upvoted?(link)
     current_user.remove_vote(link)
+  elsif current_user.downvoted?(link)
+    current_user.remove_vote(link)
+    current_user.upvote(link)
   else
     current_user.upvote(link)
   end
+  link.calc_hot_score
+  redirect_to root_path
+end
 
+def downvote
+  link = Link.find_by(id: params[:id])
+
+  if current_user.downvoted?(link)
+    current_user.remove_vote(link)
+  elsif current_user.upvoted?(link)
+    current_user.remove_vote(link)
+    current_user.downvote(link)
+  else
+    current_user.downvote(link)
+  end
+  link.calc_hot_score
   redirect_to root_path
 end
   

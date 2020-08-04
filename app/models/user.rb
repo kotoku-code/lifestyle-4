@@ -28,4 +28,12 @@ class User < ApplicationRecord
         def remove_vote(link)
           votes.find_by(link: link).destroy
         end
+
+        def downvote(link)
+          votes.create(downvote: 1, link: link)
+        end
+        
+        def downvoted?(link)
+          votes.exists?(downvote: 1, link: link)
+        end
 end

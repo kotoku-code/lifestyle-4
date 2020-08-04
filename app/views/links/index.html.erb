@@ -28,10 +28,13 @@
   <span class="edit-link">
     <%= link_to "edit", edit_link_path(link) %>
   </span>
-<% if logged_in? %>
+<% if signed_in? %>
   <span class="upvote-link">
     <%= link_to "upvote (#{link.upvotes})", upvote_link_path(link), method: :post %>
   </span>
+  <span class="downvote-link">
+  <%= link_to "downvote (#{link.downvotes})", downvote_link_path(link), method: :post %>
+</span>
 <% end %>
   <span class="delete-link">
     <%= link_to "delete", link, method: :delete, data: { confirm: "Are you sure?" } %>
