@@ -5,7 +5,7 @@
       </div>
       <ul class="nav navbar-nav">
       <%= link_to "submit a link", new_link_path %>
-      <%= link_to "comments", "#" %>
+      <%= link_to "comments", comments_path %>
         <% if user_signed_in? %>
           <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
         <% else %>  
