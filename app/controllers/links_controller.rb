@@ -49,6 +49,12 @@ end
     render :edit
   end
 end
+
+def show
+
+  @link = Link.find_by(id: params[:id])
+  @comments = @link.comments
+end
   
   private
   

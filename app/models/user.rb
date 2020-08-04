@@ -7,11 +7,14 @@ class User < ApplicationRecord
 
 
          has_many :links, dependent: :destroy
-
+         has_many :comments
 
          def owns_link?(link)
           self == link.user
         end
 
+        def owns_comment?(comment)
+          self == comment.user
+        end
         
 end
