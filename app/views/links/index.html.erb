@@ -1,5 +1,5 @@
 <section class="all-links">
-  <% @links.each do |link|  %>
+  <% @link.each do |link|  %>
     <div class="link">
       <div class="title">
         <%= link_to link.title, (link.url? ? link.url : link) %>

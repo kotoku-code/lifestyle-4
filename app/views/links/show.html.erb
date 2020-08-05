@@ -1,6 +1,6 @@
 <section class="link-thread">
   <header>
-    <%= render @link %>
+    
 
     <% if @link.description? %>
       <p>
@@ -42,7 +42,7 @@
               <%= time_ago_in_words(comment.created_at) %> ago
             </span>
 
-            <% if logged_in? && current_user.owns_comment?(comment) %>
+            <% if signed_in? && current_user.owns_comment?(comment) %>
   <span class="edit-comment">
     <%= link_to 'edit',  edit_link_comment_path(@link, comment) %>
   </span>

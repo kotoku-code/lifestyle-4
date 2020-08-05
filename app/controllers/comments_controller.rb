@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-  before_action :prevent_unauthorized_user_access, except: :index
   before_action :set_variables, only: [:edit, :update, :destroy]
 
   def index
