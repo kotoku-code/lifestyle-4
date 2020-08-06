@@ -14,7 +14,7 @@
 
       <div class="metadata">
       <span class="points">
-  <%= pluralize(link.points, 'point') %> by <%= link.includes([:user]).username %>
+  <%= pluralize(link.points, 'point') %> by <%= link.user.username %>
 </span>
         <span class="time-created">
           <%= time_ago_in_words(link.created_at) %> ago

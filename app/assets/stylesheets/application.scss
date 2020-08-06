@@ -224,7 +224,7 @@ ul { list-style-type: none; }
   @media (max-width: 768px) {
   .articles, .article { grid-template-columns: 1fr; }
 
-  #foot-r { margin-right: 0px;}
+  #foot-r { margin-right: 10px;}
 
   .grid-row {
     display: grid;
