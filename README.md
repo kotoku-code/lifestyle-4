@@ -18,9 +18,9 @@ This is the Capstone project that signs the completion of the RubyOnRails module
 
 ## Live demo & Walkthrough video
 
-Heroku Deployment:   👈
+Heroku Deployment: https://pure-escarpment-50526.herokuapp.com/  👈
 
-Live Demo Link:
+Live Demo Link: 
 
 ## Built With
 

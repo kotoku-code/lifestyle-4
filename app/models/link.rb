@@ -10,7 +10,7 @@ class Link < ApplicationRecord
             presence: true,
             uniqueness: { case_sensitive: false }
             
-validates :url,
+validates :url, 
           format: { with: %r{\Ahttps?://} },
           allow_blank: true
 
