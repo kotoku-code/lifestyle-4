@@ -2,7 +2,7 @@
 
 This project is the Capstone of the Microverse curriculum at the end of the Ruby on Rails module!
 
-## Table of Contents
+## Table of Content
 
 * [About the Project](#about-the-project)
 * [LIVE VIDEO](#live_video)
