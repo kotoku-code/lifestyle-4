@@ -16,6 +16,9 @@ This project is the Capstone of the Microverse curriculum at the end of the Ruby
 
 This is the Capstone project that signs the completion of the RubyOnRails module in Microverse Curriculum. It is a webapp where users can register using name, username, password. As a logged in user, it is possible to create articles with links, comment and vote. 
 
+![demo](https://user-images.githubusercontent.com/53125243/90258793-53e95180-de49-11ea-872c-4b22fcbe1c1c.PNG)
+
+
 ## Live demo & Walkthrough video
 
 Heroku Deployment: https://pure-escarpment-50526.herokuapp.com/  👈
