@@ -18,15 +18,4 @@ RSpec.describe 'signup page', type: :feature do
     expect(page).to have_content('Lifestyles')
   end
 
-  # scenario 'çreating an article with invalid inputs' do
-  #   visit new_link_path
-  #   fill_in 'Title', with 'Test Title'
-  #   fill_in 'url', with 'url-link'
-  #   fill_in 'description', with 'Hello there'
-
-  #   click_button 'Çreate Link'
-
-  #   expect(page).to have_content('Úrl is invalid')
-  # end
-
 end

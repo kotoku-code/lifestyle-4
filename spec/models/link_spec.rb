@@ -13,7 +13,11 @@ RSpec.describe Link, type: :model do
     it { should belong_to(:user) }
     it { should have_many(:comments) }
     it { should have_many(:votes) }
-
   end
 
+  it 'fails validation with no name expecting a specific message' do
+    no_link_url = Link.new(url: 'hey')
+    no_link_url.valid?
+    expect(no_link_url.errors[:url]).to include('is invalid')
+  end
 end
