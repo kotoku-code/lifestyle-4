@@ -12,10 +12,8 @@ RSpec.describe 'signup page', type: :feature do
     expect(page).to have_content('Welcome! You have signed up successfully')
   end
 
-  
   scenario 'çreating an article' do
     visit new_link_path
     expect(page).to have_content('Lifestyles')
   end
-
 end

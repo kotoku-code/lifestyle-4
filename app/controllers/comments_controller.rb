@@ -1,14 +1,12 @@
 class CommentsController < ApplicationController
-  before_action :set_variables, only: [:edit, :update, :destroy]
+  before_action :set_variables, only: %i[edit update destroy]
 
   def index
     @comments = Comment.all
   end
 
   def edit
-    unless current_user.owns_comment?(@comment)
-      redirect_to root_path, notice: 'Not authorized to edit this comment'
-    end
+    redirect_to root_path, notice: 'Not authorized to edit this comment' unless current_user.owns_comment?(@comment)
   end
 
   def create
