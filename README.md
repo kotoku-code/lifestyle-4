@@ -23,7 +23,7 @@ This is the Capstone project that signs the completion of the RubyOnRails module
 
 Heroku Deployment: https://pure-escarpment-50526.herokuapp.com/  👈
 
-Live Demo Link: 
+Live Demo Link: https://www.loom.com/share/986ff05e86f146f7a4bf59f69414778b
 
 ## Built With
 

@@ -1,7 +1,7 @@
 class Link < ApplicationRecord
   
   belongs_to :user
-  has_many :comments, dependent: :nullify
+  has_many :comments, dependent: :destroy
   has_many :votes
 
   scope :hottest, -> { order(hot_score: :desc) }
