@@ -1,5 +1,24 @@
 @import "bootstrap/scss/bootstrap";
 
-.test {
-    background-color: pink;
-}
+.upvote-link {
+    margin-left: 1.5%;
+  }
+  
+  
+  .link {
+    margin-left: 1.5%;
+  }
+  
+
+  .articles, .article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  .article:nth-child(3), .article:nth-child(4), .article:nth-child(7), .article:nth-child(8) { direction: rtl; }
+
+  .article-img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+  }
