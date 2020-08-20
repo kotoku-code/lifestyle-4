@@ -2,6 +2,11 @@
     <div class="col-sm-6">
       <%= simple_form_for @link do |f| %>
         <%= render "shared/errors", object: @link %>
+        
+        <div class="form-group">
+          <%= f.label :image %>
+          <%= f.file_field :image %>
+        </div>
 
         <div class="form-group">
           <%= f.text_field :title, required: true, class: "form-control", placeholder: "title" %>

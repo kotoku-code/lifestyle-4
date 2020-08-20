@@ -1,7 +1,10 @@
 <section class="all-links">
+
   <% @link.each do |link|  %>
     <div class="link">
-      <div class="title">
+
+ 
+   <div class="title">
         <%= link_to link.title, (link.url? ? link.url : link) %>
         <% if link.url? %>
           <span>
@@ -9,6 +12,7 @@
           </span>
         <% end %>
       </div>
+      
 
       <div class="metadata">
         <span class="points">
