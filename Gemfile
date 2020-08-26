@@ -25,7 +25,7 @@ gem 'activestorage'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'cloudinary'
 gem 'devise'
-gem 'rubocop'
+gem 'rubocop', '~>0.81.0'
 gem 'simple_form'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
