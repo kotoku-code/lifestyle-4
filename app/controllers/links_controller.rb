@@ -5,7 +5,7 @@ class LinksController < ApplicationController
   end
 
   def index
-    @link = Link.hottest #.includes([:user]).includes([:comments])
+    @link = Link.hottest # .includes([:user]).includes([:comments])
   end
 
   def create
