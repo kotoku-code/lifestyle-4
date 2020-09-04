@@ -1,51 +1,52 @@
-<section class="all-links">
 
-  <% @link.each do |link|  %>
-    <div class="link">
+<div class="container">
+  <div class="row">
+    <div class="card-columns">
+      <% @link.each do |link|  %>
+        <div class="card">
+          <div class="card-header">
+            <%= link_to link.title, link.url %>
+          </div>
+          <% if link.image.attached? %>
+            <%= image_tag link.image , class: "card-img-top" %>
+          <% end %>
 
- 
-   <div class="title">
-        <%= link_to link.title, (link.url? ? link.url : link) %>
-        <% if link.url? %>
-          <span>
-            ( <%= link.url %> )
-          </span>
-        <% end %>
-      </div>
-      
+          <%= link.description %>
 
-      <div class="metadata">
-        <span class="points">
-          <%= pluralize(link.points, 'point') %> by <%= link.user.username %>
-        </span>
-
-        <span class="time-created">
-          <%= time_ago_in_words(link.created_at) %> ago
-        </span>
-
-        <span class="comment-count">
-          <%= link_to pluralize(link.comment_count, 'comment'), link %>
-        </span>
-      </div>
-
-        <% if signed_in? && current_user.owns_link?(link) %>
-          <span class="edit-link">
-            <%= link_to "edit", edit_link_path(link) %>
-          </span>
-          <span class="delete-link">
-            <%= link_to "delete", link, method: :delete, data: { confirm: "Are you sure?" } %>
-          </span>
-        <% end %>
-    </div>
-          <% if signed_in? %>
-            <span class="upvote-link">
-              <%= link_to "upvote (#{link.upvotes})", upvote_link_path(link), method: :post %>
+          <div class="metadata">
+            <span class="points">
+              <%= pluralize(link.points, 'point') %> by <%= link.user.username %>
             </span>
-            <span class="downvote-link">
-              <%= link_to "downvote (#{link.downvotes})", downvote_link_path(link), method: :post %>
+
+            <span class="time-created">
+              <%= time_ago_in_words(link.created_at) %> ago
+            </span>
+
+            <span class="comment-count">
+              <%= link_to pluralize(link.comment_count, 'comment'), link %>
+            </span>
+          </div>
+
+          <% if signed_in? && current_user.owns_link?(link) %>
+            <span class="edit-link">
+              <%= link_to "edit", edit_link_path(link) %>
+            </span>
+            <span class="delete-link">
+              <%= link_to "delete", link, method: :delete, data: { confirm: "Are you sure?" } %>
             </span>
           <% end %>
 
-  <% end %>
-  
-</section>
+
+          <% if signed_in? %>
+              <span class="upvote-link">
+                <%= link_to "upvote (#{link.upvotes})", upvote_link_path(link), method: :post, class: "btn btn-primary" %>
+              </span>
+              <span class="downvote-link">
+                <%= link_to "downvote (#{link.downvotes})", downvote_link_path(link), method: :post, class: "btn btn-danger" %>
+              </span>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

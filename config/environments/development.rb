@@ -14,9 +14,9 @@ Rails.application.configure do
 
   config.after_initialize do
     #Enable bullet in your application
-    Bullet.enable = true
-    Bullet.alert = true
-    Bullet.console = true
+    # Bullet.enable = true
+    # Bullet.alert = true
+    # Bullet.console = true
   end
 
   # Enable/disable caching. By default caching is disabled.
