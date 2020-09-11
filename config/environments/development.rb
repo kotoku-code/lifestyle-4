@@ -13,10 +13,10 @@ Rails.application.configure do
   config.consider_all_requests_local = true
 
   config.after_initialize do
-    #Enable bullet in your application
-    # Bullet.enable = true
-    # Bullet.alert = true
-    # Bullet.console = true
+    # Enable bullet in your application
+    Bullet.enable = true
+    Bullet.alert = true
+    Bullet.console = true
   end
 
   # Enable/disable caching. By default caching is disabled.
