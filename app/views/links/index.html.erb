@@ -1,1 +1,52 @@
-<h1>Welcome!</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="card-columns">
+      <% @link.each do |link|  %>
+        <div class="card">
+          <div class="card-header">
+            <%= link_to link.title, link.url %>
+          </div>
+          <% if link.image.attached? %>
+            <%= image_tag link.image , class: "card-img-top" %>
+          <% end %>
+
+          <%= link.description %>
+
+          <div class="metadata">
+            <span class="points">
+              <%= pluralize(link.points, 'point') %> by <%= link.user.username %>
+            </span>
+
+            <span class="time-created">
+              <%= time_ago_in_words(link.created_at) %> ago
+            </span>
+
+            <span class="comment-count">
+              <%= link_to pluralize(link.comment_count, 'comment'), link %>
+            </span>
+          </div>
+
+          <% if signed_in? && current_user.owns_link?(link) %>
+            <span class="edit-link btn btn-primary">
+              <%= link_to "edit", edit_link_path(link) %>
+            </span>
+            <span class="delete-link btn btn-danger">
+              <%= link_to "delete", link, method: :delete, data: { confirm: "Are you sure?" } %>
+            </span>
+          <% end %>
+
+
+          <% if signed_in? %>
+              <span class="upvote-link">
+                <%= link_to "upvote (#{link.upvotes})", upvote_link_path(link), method: :post, class: "btn btn-primary" %>
+              </span>
+              <span class="downvote-link">
+                <%= link_to "downvote (#{link.downvotes})", downvote_link_path(link), method: :post, class: "btn btn-danger" %>
+              </span>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

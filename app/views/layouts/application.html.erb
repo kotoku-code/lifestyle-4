@@ -6,13 +6,21 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'comments', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'links', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'sessions', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'users', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <%= render 'shared/navbar'%>
   <%= render 'layouts/alerts'%>
-  <%= render 'layouts/nav_bar'%>
-
+  
     <%= yield %>
+    <%= render 'layouts/footer'%>
+
   </body>
 </html>
